@@ -1,11 +1,11 @@
 <div class="my-12">
-  <h2 class="uppercase opacity-50 text-sm">Credits</h2>
+  <h2 class="uppercase opacity-50 text-sm mt-2">Credits</h2>
   <ul class="mt-2 opacity-50">
     <li class="mt-1">
       Font is 
       <a href="https://fonts.google.com/specimen/Exo+2" class="text-teal-600">Exo 2</a>
        under 
-      <a href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL" class="text-teal-600">SIP License</a>.
+      <a href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL" class="text-teal-600">SIL License</a>.
     </li>
     <li class="mt-1">
       Image generated with
