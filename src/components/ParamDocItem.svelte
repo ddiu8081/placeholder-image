@@ -14,7 +14,7 @@
   {#if (config.param)}
     {#each config.param as paramItem}
       <div class="mt-2 text-sm font-mono text-teal-600 break-words">
-        {serverName}/{paramItem}
+        {paramItem}
       </div>
     {/each}
   {/if}

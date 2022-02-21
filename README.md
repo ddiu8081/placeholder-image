@@ -1,5 +1,7 @@
 # Placeholder Image
 
+![banner](https://img.ph.ljl.li/720x240)
+
 The front-end and back-end of [**ph.ljl.li**](https://ph.ljl.li).
 
 [**Website**](https://ph.ljl.li)

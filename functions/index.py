@@ -1,23 +1,32 @@
 # -*- coding: utf8 -*-
 import json
 import os
-import re
 
+from parse import parse_size, parse_color
 from utils import check, create_image, generate_imgstr
 
 scf_env = os.environ.get('PYTHONPATH')
 
 def parse_params(event):
-    # image_size
-    image_size_raw = event.get('pathParameters').get('size')
-    image_size_arr = re.split('[,x*]', image_size_raw)
-    if len(image_size_arr) == 1:
-        image_size = (int(image_size_arr[0]), int(image_size_arr[0]))
-    else:
-        image_size = (int(image_size_arr[0]), int(image_size_arr[1]))
-    
+    path_str = event.get('pathParameters').get('param')
+    path_str_list = path_str.split('/')
+    image_size = (0, 0)
+    bg_color = (221, 221, 221)
+    fg_color = (170, 170, 170)
+    if (len(path_str_list) == 1):
+        image_size = parse_size(path_str_list[0])
+    elif (len(path_str_list) == 2):
+        image_size = parse_size(path_str_list[0])
+        bg_color = parse_color(path_str_list[1])
+    elif (len(path_str_list) == 3):
+        image_size = parse_size(path_str_list[0])
+        bg_color = parse_color(path_str_list[1])
+        fg_color = parse_color(path_str_list[2])
+
     return dict(
-        size = image_size
+        image_size = image_size,
+        bg_color = bg_color,
+        fg_color = fg_color,
     )
 
 def main_handler(event, context):

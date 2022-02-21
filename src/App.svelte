@@ -9,7 +9,7 @@
 
   const configs = [
     {
-      title: 'Image Size',
+      title: 'Image Size (Required)',
       desc: 'Specify width and height. If only one value is specified, it will be used for both width and height.',
       param: [
         '[width]x[height]',
@@ -20,7 +20,15 @@
       ],
     }, {
       title: 'Custom Color',
-      desc: 'Coming soon.',
+      desc: 'Specify custom background color or foreground color.',
+      param: [
+        '[background]/[foreground]',
+        '[background]',
+      ],
+      eg: [
+        '240x80/ffedd5',
+        '240x80/06b6d4/ffffff',
+      ],
     }, {
       title: 'Custom Text',
       desc: 'Coming soon.',

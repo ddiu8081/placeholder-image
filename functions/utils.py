@@ -4,23 +4,24 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 def check(params):
-    print('== check_image_size ==')
+    print('== check ==')
     # check image size
-    size = params.get('size')
-    if size[0] * size[1] > 1.2e+7:
+    image_size = params.get('image_size')
+    if image_size[0] * image_size[1] > 1.2e+7:
         raise Exception('Image size is too large')
     return True
 
 def create_image(params):
     print('== create_image ==')
     print(params)
+    image_size = params.get('image_size')
+    bg_color = params.get('bg_color')
+    fg_color = params.get('fg_color')
     # draw background
-    size = params.get('size')
-    bg_color = (221, 221, 221)
-    image = Image.new('RGB', size, bg_color)
+    image = Image.new('RGB', image_size, bg_color)
     # draw text
-    text = str(size[0]) + ' x ' + str(size[1])
-    text_color = (170, 170, 170)
+    text = str(image_size[0]) + ' x ' + str(image_size[1])
+    text_color = fg_color
     draw_text(
         image = image,
         text = text,
