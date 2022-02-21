@@ -5,7 +5,7 @@
   import Credits from './components/Credits.svelte'
 
   const serverName = 'https://img.ph.ljl.li'
-  const params = '{size}'
+  const params = '{size}/{background?}/{foreground?}{ext?}?text={text?}'
 
   const configs = [
     {
