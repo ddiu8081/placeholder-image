@@ -31,7 +31,13 @@
       ],
     }, {
       title: 'Custom Text',
-      desc: 'Coming soon.',
+      desc: 'Fill images with custom text instead of "width x height".',
+      param: [
+        '?text=[text]',
+      ],
+      eg: [
+        '240x80?text=Hello%20world'
+      ],
     }, {
       title: 'Image Format',
       desc: 'Coming soon.',

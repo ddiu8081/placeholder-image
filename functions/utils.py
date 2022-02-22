@@ -17,10 +17,13 @@ def create_image(params):
     image_size = params.get('image_size')
     bg_color = params.get('bg_color')
     fg_color = params.get('fg_color')
+    custom_text = params.get('custom_text')
     # draw background
     image = Image.new('RGB', image_size, bg_color)
     # draw text
     text = str(image_size[0]) + ' x ' + str(image_size[1])
+    if custom_text:
+        text = custom_text
     text_color = fg_color
     draw_text(
         image = image,

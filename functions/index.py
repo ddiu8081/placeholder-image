@@ -13,6 +13,7 @@ def parse_params(event):
     image_size = (0, 0)
     bg_color = (221, 221, 221)
     fg_color = (170, 170, 170)
+    # path params
     if (len(path_str_list) == 1):
         image_size = parse_size(path_str_list[0])
     elif (len(path_str_list) == 2):
@@ -22,11 +23,14 @@ def parse_params(event):
         image_size = parse_size(path_str_list[0])
         bg_color = parse_color(path_str_list[1])
         fg_color = parse_color(path_str_list[2])
+    # query params
+    custom_text = event.get('queryStringParameters').get('text')
 
     return dict(
         image_size = image_size,
         bg_color = bg_color,
         fg_color = fg_color,
+        custom_text = custom_text,
     )
 
 def main_handler(event, context):
